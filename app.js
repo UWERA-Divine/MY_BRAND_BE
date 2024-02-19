@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 // custom modules
 
 // const { createBlog } = require("./blogController");
-const router = require("./routers");
+const blogRouter = require("./routes/blogRouter");
+const commentRouter = require("./routes/commentRouter");
 dotenv.config({ path: "./config.env" });
 
 const PORT = process.env.PORT || 8000;
@@ -30,7 +31,8 @@ mongoose
   .then(() => console.log(" DB connected successfuly"))
   .catch((err) => console.log("Error😒", err));
 
-app.use("/api/blogs", router);
+app.use("/api/blogs", blogRouter);
+app.use("/api/comments", commentRouter);
 
 app.listen(PORT, () => {
   console.log(`App running on: ${PORT} ...`);
