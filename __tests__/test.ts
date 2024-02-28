@@ -21,7 +21,7 @@ dotenv.config();
 const dbURI = process.env.MONGODB_URI || '';
 
 beforeAll(async() =>{
-    await mongoose.connect(dbURI);
+    await mongoose.connect("mongodb+srv://DivineBeulla:mongo12345678@cluster0.h2wtlww.mongodb.net/?retryWrites=true&w=majority");
 },50000);
 
 

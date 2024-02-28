@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1709124135462" clover="3.2.0">
-  <project timestamp="1709124135463" name="All files">
-    <metrics statements="286" coveredstatements="186" conditionals="23" coveredconditionals="7" methods="52" coveredmethods="26" elements="361" coveredelements="219" complexity="0" loc="286" ncloc="286" packages="7" files="21" classes="21"/>
+<coverage generated="1709129749734" clover="3.2.0">
+  <project timestamp="1709129749734" name="All files">
+    <metrics statements="283" coveredstatements="188" conditionals="23" coveredconditionals="8" methods="52" coveredmethods="24" elements="358" coveredelements="220" complexity="0" loc="283" ncloc="283" packages="7" files="20" classes="20"/>
     <package name="src">
       <metrics statements="20" coveredstatements="19" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
-      <file name="app.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\app.ts">
+      <file name="app.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\app.ts">
         <metrics statements="20" coveredstatements="19" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -29,9 +29,9 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="162" coveredstatements="86" conditionals="8" coveredconditionals="3" methods="42" coveredmethods="22"/>
-      <file name="blogController.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\controllers\blogController.ts">
-        <metrics statements="49" coveredstatements="13" conditionals="3" coveredconditionals="0" methods="16" coveredmethods="0"/>
+      <metrics statements="162" coveredstatements="91" conditionals="8" coveredconditionals="4" methods="42" coveredmethods="20"/>
+      <file name="blogController.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\controllers\blogController.ts">
+        <metrics statements="49" coveredstatements="17" conditionals="3" coveredconditionals="0" methods="16" coveredmethods="2"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -59,11 +59,11 @@
         <line num="57" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
         <line num="78" count="1" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
@@ -82,7 +82,7 @@
         <line num="104" count="0" type="stmt"/>
         <line num="106" count="0" type="stmt"/>
       </file>
-      <file name="commentController.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\controllers\commentController.ts">
+      <file name="commentController.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\controllers\commentController.ts">
         <metrics statements="41" coveredstatements="24" conditionals="1" coveredconditionals="1" methods="10" coveredmethods="8"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -126,25 +126,25 @@
         <line num="98" count="1" type="stmt"/>
         <line num="99" count="1" type="stmt"/>
       </file>
-      <file name="likeController.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\controllers\likeController.ts">
-        <metrics statements="26" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="4"/>
+      <file name="likeController.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\controllers\likeController.ts">
+        <metrics statements="26" coveredstatements="14" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="2"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
@@ -155,59 +155,59 @@
         <line num="41" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
       </file>
-      <file name="messageController.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\controllers\messageController.ts">
-        <metrics statements="46" coveredstatements="34" conditionals="3" coveredconditionals="1" methods="10" coveredmethods="10"/>
+      <file name="messageController.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\controllers\messageController.ts">
+        <metrics statements="46" coveredstatements="36" conditionals="3" coveredconditionals="2" methods="10" coveredmethods="8"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="51" count="3" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="53" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
         <line num="59" count="1" type="stmt"/>
         <line num="60" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
-        <line num="67" count="1" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
         <line num="71" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.image">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="cloudimage.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\image\cloudimage.ts">
+      <file name="cloudimage.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\image\cloudimage.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -216,7 +216,7 @@
     </package>
     <package name="src.middlewares">
       <metrics statements="42" coveredstatements="19" conditionals="13" coveredconditionals="3" methods="7" coveredmethods="2"/>
-      <file name="authenticateJWT.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\middlewares\authenticateJWT.ts">
+      <file name="authenticateJWT.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\middlewares\authenticateJWT.ts">
         <metrics statements="31" coveredstatements="13" conditionals="9" coveredconditionals="3" methods="6" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -250,7 +250,7 @@
         <line num="67" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
       </file>
-      <file name="imagemid.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\middlewares\imagemid.ts">
+      <file name="imagemid.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\middlewares\imagemid.ts">
         <metrics statements="11" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -266,34 +266,28 @@
       </file>
     </package>
     <package name="src.models">
-      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="Blog.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\models\Blog.ts">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Blog.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\models\Blog.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="Comment.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\models\Comment.ts">
+      <file name="Comment.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\models\Comment.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
       </file>
-      <file name="Like.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\models\Like.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-      </file>
-      <file name="Message.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\models\Message.ts">
+      <file name="Message.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\models\Message.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
       </file>
-      <file name="User.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\models\User.ts">
+      <file name="User.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\models\User.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
@@ -302,7 +296,7 @@
     </package>
     <package name="src.routes">
       <metrics statements="34" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="blogRoutes.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\routes\blogRoutes.ts">
+      <file name="blogRoutes.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\routes\blogRoutes.ts">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -316,7 +310,7 @@
         <line num="14" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
       </file>
-      <file name="commentRoutes.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\routes\commentRoutes.ts">
+      <file name="commentRoutes.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\routes\commentRoutes.ts">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -327,7 +321,7 @@
         <line num="17" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
       </file>
-      <file name="likeRoutes.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\routes\likeRoutes.ts">
+      <file name="likeRoutes.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\routes\likeRoutes.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -336,7 +330,7 @@
         <line num="7" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
-      <file name="messageRoutes.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\routes\messageRoutes.ts">
+      <file name="messageRoutes.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\routes\messageRoutes.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -351,22 +345,22 @@
     </package>
     <package name="src.validators">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="BlogValidationSchema.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\validators\BlogValidationSchema.ts">
+      <file name="BlogValidationSchema.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\validators\BlogValidationSchema.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="commentValidators.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\validators\commentValidators.ts">
+      <file name="commentValidators.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\validators\commentValidators.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="likeValidators.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\validators\likeValidators.ts">
+      <file name="likeValidators.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\validators\likeValidators.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
       </file>
-      <file name="messageValidators.ts" path="C:\Users\User\Desktop\MYBRANDBE\src\validators\messageValidators.ts">
+      <file name="messageValidators.ts" path="C:\Users\User\Desktop\MY_BRAND_BE\src\validators\messageValidators.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>

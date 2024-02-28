@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">56.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/32</span>
+                <span class='fraction'>18/32</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.69% </span>
+                <span class="strong">53.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/26</span>
+                <span class='fraction'>14/26</span>
             </div>
         
             
@@ -114,28 +114,28 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,20 +169,20 @@ export const createLike = async (req: Request, res: Response) =&gt; {
       throw new Error(error.details[0].message);
     }
   
-    const likes = <span class="cstat-no" title="statement not covered" >new Like({ like, blogId });</span>
-<span class="cstat-no" title="statement not covered" >    await likes.save();</span>
-<span class="cstat-no" title="statement not covered" >    res.status(201).json({ message: 'Like created successfully' });</span>
+    const likes = new Like({ like, blogId });
+    await likes.save();
+    res.status(201).json({ message: 'Like created successfully' });
   } catch (error:any) {
     res.status(400).json({ message: error.message });
 }
 };
-export const getLikes = async (req: Request, res: Response) =&gt; {
-  try {
-    const { blogId } = req.params; 
-    const likes = await Like.find({ blogId }); 
+export const getLikes = <span class="fstat-no" title="function not covered" >async (r</span>eq: Request, res: Response) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+    const { blogId } = <span class="cstat-no" title="statement not covered" >req.params; </span>
+    const likes = <span class="cstat-no" title="statement not covered" >await Like.find({ blogId }); </span>
     
 &nbsp;
-    res.status(200).json({ likes });
+<span class="cstat-no" title="statement not covered" >    res.status(200).json({ likes });</span>
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    res.status(500).json({ message: "Internal Server Error" });</span>
   }
@@ -211,7 +211,7 @@ export const getLike= <span class="fstat-no" title="function not covered" >async
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-02-28T12:42:14.044Z
+                at 2024-02-28T14:15:43.865Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
