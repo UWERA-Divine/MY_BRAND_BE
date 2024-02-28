@@ -8,7 +8,7 @@ import likeRoutes from "./routes/likeRoutes";
 import cloudinary from "cloudinary";
 import * as swaggerDocument from "./swagger.json";
 import swaggerUI from "swagger-ui-express";
-
+import cors from "cors";
 const app = express();
 
 app.use(express.json());
@@ -25,6 +25,7 @@ app.use("/api/blogs", commentRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/blogs", likeRoutes);
 app.use('/docs', swaggerUI.serve,swaggerUI.setup(swaggerDocument))
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

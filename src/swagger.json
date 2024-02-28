@@ -9,8 +9,7 @@
             "description": "Enter your bearer token in the format *Bearer <token>*"
           }
     },
-    "security":[{"Bearer": []}],
-       
+
     
     "info":{
         "title":"MyBrand-BE swagger express",

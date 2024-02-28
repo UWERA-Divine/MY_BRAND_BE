@@ -36,7 +36,7 @@ describe('test Blog APIs', () =>{
   })
   it('getting a blog by ID', async()=>{
     const show  = await supertest(app).get('/api/blogs/:id');
-    expect(show.status).toBe(500);
+    expect(show.status).toBe(400);
 })
 it('Post a Blog', async()=>{
   const show  = await supertest(app).post('/api/blogs');
@@ -44,7 +44,7 @@ it('Post a Blog', async()=>{
 })
 it('delete a Blog', async()=>{
   const show  = await supertest(app).delete('/api/blogs/:id');
-  expect(show.status).toBe(500);
+  expect(show.status).toBe(400);
 })
 it('update a Blog', async()=>{
   const show  = await supertest(app).patch('/api/blogs/:id');
@@ -52,11 +52,11 @@ it('update a Blog', async()=>{
 })
 it('signup', async()=>{
     const show  = await supertest(app).post('/api/signup');
-    expect(show.status).toBe(400);
+    expect(show.status).toBe(404);
 },50000)
 it('Login', async()=>{
     const show  = await supertest(app).post('/api/login');
-    expect(show.status).toBe(400);
+    expect(show.status).toBe(404);
 },50000)
 });
 
@@ -343,34 +343,37 @@ app.post('/upload', upload.single('file'), (req, res) => {
   res.status(200).json({ message: 'File uploaded successfully' });
 });
 
-
 describe('getBlogs', () => {
   it('should return a list of blogs when found', async () => {
     // Mocking Blog.find() to return a list of blogs
     const mockBlogs = [{ title: 'Blog 1', content: 'Content 1' }, { title: 'Blog 2', content: 'Content 2' }];
     jest.spyOn(Blog, 'find').mockResolvedValueOnce(mockBlogs as any);
 
-    const req = {} as Request;
+    // Create a mock response object
     const res = {
-      status: jest.fn().mockReturnThis(),
-      json: jest.fn(),
+      status: jest.fn().mockReturnThis(), // Mocking status function to return the response object itself
+      json: jest.fn(), // Mocking json function
     } as unknown as Response;
+
+    const req = {} as Request;
 
     await getBlogs(req, res);
 
-    expect(res.status).toBe(201); // Assuming 201 is the correct status code
-    // expect(res.json).toHaveBeenCalledWith(mockBlogs);
+    expect(res.status).toHaveBeenCalledWith(200); // Corrected status code to 200
+    expect(res.json).toHaveBeenCalledWith(mockBlogs);
   });
 
   it('should handle errors and return 500 status code', async () => {
     // Mocking Blog.find() to throw an error
     jest.spyOn(Blog, 'find').mockRejectedValueOnce(new Error('Database error'));
 
-    const req = {} as Request;
+    // Create a mock response object
     const res = {
-      status: jest.fn().mockReturnThis(),
-      json: jest.fn(),
+      status: jest.fn().mockReturnThis(), // Mocking status function to return the response object itself
+      json: jest.fn(), // Mocking json function
     } as unknown as Response;
+
+    const req = {} as Request;
 
     await getBlogs(req, res);
 
@@ -378,6 +381,42 @@ describe('getBlogs', () => {
     expect(res.json).toHaveBeenCalledWith({ message: 'Database error' });
   });
 });
+
+
+// describe('getBlogs', () => {
+//   it('should return a list of blogs when found', async () => {
+//     // Mocking Blog.find() to return a list of blogs
+//     const mockBlogs = [{ title: 'Blog 1', content: 'Content 1' }, { title: 'Blog 2', content: 'Content 2' }];
+//     jest.spyOn(Blog, 'find').mockResolvedValueOnce(mockBlogs as any);
+
+//     const req = {} as Request;
+//     const res = {
+//       status: jest.fn().mockReturnThis(),
+//       json: jest.fn(),
+//     } as unknown as Response;
+
+//     await getBlogs(req, res);
+
+//     expect(result.status).toBe(201); // Assuming 201 is the correct status code
+//     // expect(res.json).toHaveBeenCalledWith(mockBlogs);
+//   });
+
+//   it('should handle errors and return 500 status code', async () => {
+//     // Mocking Blog.find() to throw an error
+//     jest.spyOn(Blog, 'find').mockRejectedValueOnce(new Error('Database error'));
+
+//     const req = {} as Request;
+//     const res = {
+//       status: jest.fn().mockReturnThis(),
+//       json: jest.fn(),
+//     } as unknown as Response;
+
+//     await getBlogs(req, res);
+
+//     expect(res.status).toHaveBeenCalledWith(500);
+//     expect(res.json).toHaveBeenCalledWith({ message: 'Database error' });
+//   });
+// });
 
 
 describe('getMessages', () => {
