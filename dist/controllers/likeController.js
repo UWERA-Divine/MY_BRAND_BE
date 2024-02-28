@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getLikes = exports.createLike = void 0;
+exports.getLike = exports.getLikes = exports.createLike = void 0;
 const Like_1 = __importDefault(require("../models/Like"));
 const likeValidators_1 = require("../validators/likeValidators");
 const createLike = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -31,16 +31,18 @@ const createLike = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.createLike = createLike;
-// export const getLikes = async (req: Request, res: Response) => {
-//   try {
-//     const { blogId } = req.params; 
-//     const likes = await Like.find({ blogId }); 
-//     res.status(200).json({ likes });
-//   } catch (error) {
-//     res.status(500).json({ message: "Internal Server Error" });
-//   }
-// };
 const getLikes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { blogId } = req.params;
+        const likes = yield Like_1.default.find({ blogId });
+        res.status(200).json({ likes });
+    }
+    catch (error) {
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
+exports.getLikes = getLikes;
+const getLike = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const blogId = req.params.id;
         // const commentid=req.params.id;
@@ -53,4 +55,4 @@ const getLikes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.status(500).json({ message: err.message });
     }
 });
-exports.getLikes = getLikes;
+exports.getLike = getLike;

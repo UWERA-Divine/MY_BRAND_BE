@@ -12,13 +12,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteBlog = exports.updateBlog = exports.getBlogById = exports.getBlogs = exports.createBlog = exports.uploadImageToCloudinary = void 0;
+exports.deleteBlog = exports.updateBlog = exports.getBlogById = exports.getBlogs = exports.createBlog = exports.getMockBlogById = exports.getMockBlogs = exports.uploadImageToCloudinary = void 0;
 const Blog_1 = __importDefault(require("../models/Blog"));
 const mongoose_1 = require("mongoose");
 const cloudinary_1 = __importDefault(require("cloudinary"));
 const BlogValidationSchema_1 = require("../validators/BlogValidationSchema");
 // import { request } from "http";
 const cloudimage_1 = __importDefault(require("../image/cloudimage"));
+// export const uploadImageToCloudinary = async (
+//   imagePath: string
+// ): Promise<string> => {
+//   try {
+//     const result = await cloudinary.v2.uploader.upload(imagePath);
+//     return result.secure_url;
+//   } catch (error) {
+//     throw new Error("Error uploading image to Cloudinary");
+//   }
+// };
 const uploadImageToCloudinary = (imagePath) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const result = yield cloudinary_1.default.v2.uploader.upload(imagePath);
@@ -29,6 +39,19 @@ const uploadImageToCloudinary = (imagePath) => __awaiter(void 0, void 0, void 0,
     }
 });
 exports.uploadImageToCloudinary = uploadImageToCloudinary;
+const getMockBlogs = () => __awaiter(void 0, void 0, void 0, function* () {
+    // Mock function to return an array of mock blogs
+    return [
+        { _id: "mockId1", title: "Mock Blog 1", content: "Mock content 1" },
+        { _id: "mockId2", title: "Mock Blog 2", content: "Mock content 2" },
+    ];
+});
+exports.getMockBlogs = getMockBlogs;
+const getMockBlogById = () => __awaiter(void 0, void 0, void 0, function* () {
+    // Mock function to return a single mock blog by ID
+    return { _id: "mockId", title: "Mock Blog", content: "Mock content" };
+});
+exports.getMockBlogById = getMockBlogById;
 const createBlog = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { title, content } = req.body;
