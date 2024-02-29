@@ -1,4 +1,9 @@
 "use strict";
+// // src/controllers/commentsController.ts
+// import { Request, Response } from 'express';
+// import Comment from '../models/Comment';
+// import Blog from '../models/Blog';
+// import {commentSchema} from '../validators/commentValidators';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteComment = exports.updateComment = exports.getCommentsByBlogId = exports.CreateComment = void 0;
+exports.deleteComment = exports.updateComment = exports.getCommentsByBlogId = exports.CreateComment = exports.error = void 0;
 const Comment_1 = __importDefault(require("../models/Comment"));
 const commentValidators_1 = require("../validators/commentValidators");
 class CustomResponse {
@@ -27,7 +32,15 @@ class CustomResponse {
         });
     }
 }
-exports.default = CustomResponse;
+const error = (error, res) => {
+    console.error(error);
+    if (error.name === 'CastError' && error.kind === 'ObjectId') {
+        // Handle the case where the provided ID is invalid (not a valid ObjectId)
+        return res.status(400).json({ message: 'Invalid ID format' });
+    }
+    res.status(500).json({ message: 'Internal server error' });
+};
+exports.error = error;
 const CreateComment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const response = new CustomResponse(req, res);
     try {
@@ -47,9 +60,8 @@ const CreateComment = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         const savedComment = yield newComment.save();
         response.send(savedComment, 'Comment Created Successfully', 201);
     }
-    catch (error) {
-        const errorMessage = error;
-        response.send(null, errorMessage, 500);
+    catch (error) { // Explicitly type error as any
+        error(error, res); // Utilize the error function to handle errors
     }
 });
 exports.CreateComment = CreateComment;
@@ -84,7 +96,7 @@ const deleteComment = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         yield Comment_1.default.findByIdAndDelete(id);
         res.sendStatus(204);
     }
-    catch (error) {
+    catch (error) { // Explicitly type error as any
         console.error(error);
         res.status(500).json({ message: 'Internal server error' });
     }

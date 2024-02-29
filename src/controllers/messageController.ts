@@ -105,7 +105,7 @@ export const getMessages = async (
     const messages = await Message.find();
     res.json(messages);
   } catch (error) {
-    console.error(error);
+    
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -123,7 +123,7 @@ export const getMessageById = async (
     }
     res.json(messages);
   } catch (error) {
-    console.error(error);
+    
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -145,7 +145,7 @@ export const updateMessage = async (
     }
     res.json(updatedMessage);
   } catch (error) {
-    console.error(error);
+    
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -159,7 +159,7 @@ export const deleteMessage = async (
     await Message.findByIdAndDelete(messageId);
     res.sendStatus(204);
   } catch (error) {
-    console.error(error);
+    
     res.status(500).json({ message: "Internal server error" });
   }
 };

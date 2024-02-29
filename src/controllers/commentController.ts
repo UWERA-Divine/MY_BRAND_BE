@@ -217,7 +217,7 @@ export const deleteComment = async (req: Request, res: Response): Promise<void> 
     await Comment.findByIdAndDelete(id);
     res.sendStatus(204);
   } catch (error: any) { // Explicitly type error as any
-    console.error(error);
+    
     res.status(500).json({ message: 'Internal server error' });
   }
 };

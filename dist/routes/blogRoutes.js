@@ -32,7 +32,7 @@ const blogController = __importStar(require("../controllers/blogController"));
 const imagemid_1 = __importDefault(require("../middlewares/imagemid"));
 const router = express_1.default.Router();
 router.post('/', authenticateJWT_1.isAuthenticated, imagemid_1.default.single('image'), blogController.createBlog);
-router.get('/', authenticateJWT_1.isAuthenticated, blogController.getBlogs);
+router.get('/', blogController.getBlogs);
 router.get('/:id', authenticateJWT_1.isAuthenticated, blogController.getBlogById);
 router.patch('/:id', authenticateJWT_1.isAuthenticated, blogController.updateBlog);
 router.delete('/:id', authenticateJWT_1.isAuthenticated, blogController.deleteBlog);
