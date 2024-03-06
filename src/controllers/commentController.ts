@@ -146,7 +146,7 @@ class CustomResponse {
 }
 
 const error = (error: any, res: Response) => {
-  console.error(error);
+  console.log(error);
 
   if (error.name === 'CastError' && error.kind === 'ObjectId') {
     // Handle the case where the provided ID is invalid (not a valid ObjectId)

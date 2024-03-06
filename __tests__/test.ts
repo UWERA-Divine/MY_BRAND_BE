@@ -41,7 +41,7 @@ beforeAll(async () => {
 afterAll(async () => {
   await mongoose.connection.close();
 }, 80000);
-const blogId = '65d751eb91e7a9c061d7c357';
+const blogId = "65d751eb91e7a9c061d7c357";
 
 describe("test Blog APIs", () => {
   it("/api/ for 404", async () => {
@@ -122,26 +122,26 @@ describe("likes APIs", () => {
   });
 });
 
-jest.mock("../src/models/Like", () => ({
-  __esModule: true,
-  default: jest.fn().mockImplementation(() => ({
-    save: jest.fn(),
-  })),
-}));
+// jest.mock("../src/models/Like", () => ({
+//   __esModule: true,
+//   default: jest.fn().mockImplementation(() => ({
+//     save: jest.fn(),
+//   })),
+// }));
 
-jest.mock("../src/models/Like", () => ({
-  __esModule: true,
-  default: jest.fn().mockImplementation(() => ({
-    save: jest.fn(),
-  })),
-}));
+// jest.mock("../src/models/Like", () => ({
+//   __esModule: true,
+//   default: jest.fn().mockImplementation(() => ({
+//     save: jest.fn(),
+//   })),
+// }));
 
-jest.mock("../src/models/Like", () => ({
-  __esModule: true,
-  default: jest.fn().mockImplementation(() => ({
-    save: jest.fn(),
-  })),
-}));
+// jest.mock("../src/models/Like", () => ({
+//   __esModule: true,
+//   default: jest.fn().mockImplementation(() => ({
+//     save: jest.fn(),
+//   })),
+// }));
 
 describe("createLike", () => {
   let req: Partial<Request>;
@@ -568,5 +568,16 @@ describe("deleteMessage", () => {
 
     expect(res.status).toHaveBeenCalledWith(500);
     expect(res.json).toHaveBeenCalledWith({ message: "Internal server error" });
+  });
+});
+
+describe("GET /api/blogs/:id", () => {
+  it("getting a blog", async () => {
+    const res = await supertest(app).get("/api/blogs");
+    expect(res.statusCode).toBe(200);
+  });
+  it("getting blog by id", async () => {
+    const res = await supertest(app).get("/api/blogs/65d751eb91e7a9c061d7c357");
+    expect(res.statusCode).toBe(400);
   });
 });

@@ -92,7 +92,7 @@ export const createMessage = async (
     const savedMessage = await newMessage.save();
     res.status(201).json(savedMessage);
   } catch (error) {
-    console.error(error);
+    console.log(error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
