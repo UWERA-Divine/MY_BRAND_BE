@@ -1,5 +1,5 @@
 TN:
-SF:src\app.ts
+SF:src/app.ts
 FNF:0
 FNH:0
 DA:2,1
@@ -27,7 +27,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\controllers\blogController.ts
+SF:src/controllers/blogController.ts
 FN:20,(anonymous_8)
 FN:22,(anonymous_9)
 FN:31,(anonymous_10)
@@ -120,7 +120,7 @@ BRF:3
 BRH:0
 end_of_record
 TN:
-SF:src\controllers\commentController.ts
+SF:src/controllers/commentController.ts
 FN:135,(anonymous_8)
 FN:140,(anonymous_9)
 FN:148,(anonymous_10)
@@ -199,7 +199,7 @@ BRF:4
 BRH:1
 end_of_record
 TN:
-SF:src\controllers\likeController.ts
+SF:src/controllers/likeController.ts
 FN:5,(anonymous_8)
 FN:5,(anonymous_9)
 FN:20,(anonymous_10)
@@ -247,7 +247,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src\controllers\messageController.ts
+SF:src/controllers/messageController.ts
 FN:78,(anonymous_8)
 FN:81,(anonymous_9)
 FN:100,(anonymous_10)
@@ -327,7 +327,7 @@ BRF:3
 BRH:2
 end_of_record
 TN:
-SF:src\controllers\usersController.ts
+SF:src/controllers/usersController.ts
 FN:13,(anonymous_8)
 FN:13,(anonymous_9)
 FN:50,(anonymous_10)
@@ -395,7 +395,7 @@ BRF:15
 BRH:0
 end_of_record
 TN:
-SF:src\image\cloudimage.ts
+SF:src/image/cloudimage.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -407,7 +407,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\middlewares\authenticateJWT.ts
+SF:src/middlewares/authenticateJWT.ts
 FN:15,(anonymous_8)
 FN:15,(anonymous_9)
 FN:28,(anonymous_10)
@@ -468,7 +468,7 @@ BRF:9
 BRH:3
 end_of_record
 TN:
-SF:src\middlewares\imagemid.ts
+SF:src/middlewares/imagemid.ts
 FN:6,(anonymous_1)
 FNF:1
 FNH:0
@@ -494,7 +494,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:src\models\Blog.ts
+SF:src/models/Blog.ts
 FNF:0
 FNH:0
 DA:2,1
@@ -507,7 +507,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\models\Comment.ts
+SF:src/models/Comment.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -520,7 +520,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\models\Like.ts
+SF:src/models/Like.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -532,7 +532,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\models\Message.ts
+SF:src/models/Message.ts
 FNF:0
 FNH:0
 DA:2,1
@@ -544,7 +544,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\models\User.ts
+SF:src/models/User.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -556,7 +556,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\routes\blogRoutes.ts
+SF:src/routes/blogRoutes.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -576,7 +576,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\routes\commentRoutes.ts
+SF:src/routes/commentRoutes.ts
 FNF:0
 FNH:0
 DA:2,1
@@ -593,7 +593,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\routes\likeRoutes.ts
+SF:src/routes/likeRoutes.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -608,7 +608,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\routes\messageRoutes.ts
+SF:src/routes/messageRoutes.ts
 FNF:0
 FNH:0
 DA:2,1
@@ -626,7 +626,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\routes\userroutes.ts
+SF:src/routes/userroutes.ts
 FNF:0
 FNH:0
 DA:2,1
@@ -641,7 +641,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\validators\BlogValidationSchema.ts
+SF:src/validators/BlogValidationSchema.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -652,7 +652,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\validators\commentValidators.ts
+SF:src/validators/commentValidators.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -663,7 +663,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\validators\likeValidators.ts
+SF:src/validators/likeValidators.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -674,7 +674,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\validators\messageValidators.ts
+SF:src/validators/messageValidators.ts
 FNF:0
 FNH:0
 DA:1,1
