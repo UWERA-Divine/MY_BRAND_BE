@@ -6,7 +6,7 @@ import messageRoutes from "./routes/messageRoutes";
 import likeRoutes from "./routes/likeRoutes";
 import userroutes from "./routes/userroutes";
 import cloudinary from "cloudinary";
-import * as swaggerDocument from "./swagger.json";
+import  swaggerDocument from "./swagger.json";
 import swaggerUI from "swagger-ui-express";
 import cors from "cors";
 const app = express();

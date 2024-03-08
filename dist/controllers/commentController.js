@@ -33,7 +33,7 @@ class CustomResponse {
     }
 }
 const error = (error, res) => {
-    console.error(error);
+    console.log(error);
     if (error.name === 'CastError' && error.kind === 'ObjectId') {
         // Handle the case where the provided ID is invalid (not a valid ObjectId)
         return res.status(400).json({ message: 'Invalid ID format' });
@@ -97,7 +97,6 @@ const deleteComment = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.sendStatus(204);
     }
     catch (error) { // Explicitly type error as any
-        console.error(error);
         res.status(500).json({ message: 'Internal server error' });
     }
 });
