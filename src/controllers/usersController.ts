@@ -76,14 +76,14 @@ export const loginUser = async (req: Request, res: Response) => {
         const token = jwt.sign({ userId: user._id }, jwtSecret, {
           expiresIn: tokenExpire,
         });
-
-        res.status(200).header("Authorization").send({
-          message: "logged in successfully!!",
-        });
+        // res.status(200).header("Authorization").send({
+        //   message: "logged in successfully!!",
+        // });
+        return res.json({token})
       }
     } else {
       return res.status(400).send({
-        data: [],
+        token: "token",
         message: "User not found please register!!",
         error: null,
       });

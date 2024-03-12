@@ -12,13 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteBlog = exports.updateBlog = exports.getBlogById = exports.getBlogs = exports.createBlog = exports.getMockBlogById = exports.getMockBlogs = exports.uploadImageToCloudinary = void 0;
+exports.deleteBlog = exports.updateBlog = exports.getBlogById = exports.getBlogs = exports.createBlog = void 0;
 const Blog_1 = __importDefault(require("../models/Blog"));
-const mongoose_1 = require("mongoose");
-const cloudinary_1 = __importDefault(require("cloudinary"));
-const BlogValidationSchema_1 = require("../validators/BlogValidationSchema");
-// import { request } from "http";
 const cloudimage_1 = __importDefault(require("../image/cloudimage"));
+// import { request } from "http";
+// import cloudimage from "../image/cloudimage";
 // export const uploadImageToCloudinary = async (
 //   imagePath: string
 // ): Promise<string> => {
@@ -29,36 +27,34 @@ const cloudimage_1 = __importDefault(require("../image/cloudimage"));
 //     throw new Error("Error uploading image to Cloudinary");
 //   }
 // };
-const uploadImageToCloudinary = (imagePath) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const result = yield cloudinary_1.default.v2.uploader.upload(imagePath);
-        return result.secure_url;
-    }
-    catch (error) {
-        throw new mongoose_1.Error("Error uploading image to Cloudinary");
-    }
-});
-exports.uploadImageToCloudinary = uploadImageToCloudinary;
-const getMockBlogs = () => __awaiter(void 0, void 0, void 0, function* () {
-    // Mock function to return an array of mock blogs
-    return [
-        { _id: "mockId1", title: "Mock Blog 1", content: "Mock content 1" },
-        { _id: "mockId2", title: "Mock Blog 2", content: "Mock content 2" },
-    ];
-});
-exports.getMockBlogs = getMockBlogs;
-const getMockBlogById = () => __awaiter(void 0, void 0, void 0, function* () {
-    // Mock function to return a single mock blog by ID
-    return { _id: "mockId", title: "Mock Blog", content: "Mock content" };
-});
-exports.getMockBlogById = getMockBlogById;
+// export const uploadImageToCloudinary = async (
+//   imagePath: string
+// ): Promise<string> => {
+//   try {
+//     const result = await cloudinary.v2.uploader.upload(imagePath);
+//     return result.secure_url;
+//   } catch (error) {
+//     throw new Error("Error uploading image to Cloudinary");
+//   }
+// };
+// export const getMockBlogs = async (): Promise<any[]> => {
+//   // Mock function to return an array of mock blogs
+//   return [
+//     { _id: "mockId1", title: "Mock Blog 1", content: "Mock content 1" },
+//     { _id: "mockId2", title: "Mock Blog 2", content: "Mock content 2" },
+//   ];
+// };
+// export const getMockBlogById = async (): Promise<any> => {
+//   // Mock function to return a single mock blog by ID
+//   return { _id: "mockId", title: "Mock Blog", content: "Mock content" };
+// };
 const createBlog = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { title, content } = req.body;
-        const { error } = BlogValidationSchema_1.blogValidationSchema.validate({ title, content });
-        if (error) {
-            return res.status(400).json({ error: error.details[0].message });
-        }
+        // const { error } = blogValidationSchema.validate({ title, content });
+        // if (error) {
+        //   return res.status(400).json({ error: error.details[0].message });
+        // }
         // const imagePath = req.file ? req.file.path : undefined;
         if (!req.file) {
             return res.status(400).json({ error: "No image uploaded" });
@@ -78,11 +74,12 @@ const createBlog = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.createBlog = createBlog;
 const getBlogs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const blogs = yield Blog_1.default.find();
-        res.json(blogs);
+        let posts;
+        posts = yield Blog_1.default.find();
+        res.status(200).json(posts);
     }
     catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).json(err);
     }
 });
 exports.getBlogs = getBlogs;

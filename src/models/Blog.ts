@@ -1,18 +1,31 @@
 // src/models/Blog.ts
 import { Schema, model } from "mongoose";
 
-const blogSchema = new Schema({
+export interface  Iblog{
   Id: Number,
-  title: String,
-  content: String,
-  author: String,
-  imageUrl: String,
+  title:string,
+  content:string,
+  imageUrl:string,
+  createdAt:Date,
+}
+const blogSchema = new Schema<Iblog>({
+  Id: {
+    type:Number
+  },
+  title:{
+    type:String
+  },
+  content:{ 
+    type:String
+  },
+  imageUrl: {
+    type:String
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-const Blog = model("Blog", blogSchema);
-
+const Blog = model<Iblog>("Blog", blogSchema)
 export default Blog;

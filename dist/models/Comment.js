@@ -5,7 +5,6 @@ const SchemaComment = new mongoose_1.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     comment: { type: String, required: true },
-    status: { type: Boolean, required: true, default: true },
     blogId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'post', },
     date: { type: Date, required: true, default: new Date() },
 });

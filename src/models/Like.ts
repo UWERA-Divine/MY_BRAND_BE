@@ -6,8 +6,8 @@ export interface Like extends Document {
 }
 
 const likeSchema: Schema = new Schema({
-  like: { type: Boolean, required: true},
-  blogId: { type: String, required: true },
+  like: { type: Boolean, required: false},
+  blogId: { type: String, required: false },
 });
 
 export default mongoose.model<Like>('Like', likeSchema);

@@ -45,10 +45,10 @@
                                     "title": {
                                         "type": "string"
                                     },
-                                    "desc": {
+                                    "content": {
                                         "type": "string"
                                     },
-                                    "image": {
+                                    "imageUrl": {
                                         "type": "string",
                                         "format": "binary",
                                         "description": "the image of the blog"
@@ -107,6 +107,743 @@
                                 "example": {
                                     "status": "success",
                                     "data": []
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/signup": {
+            "post": {
+                "tags": ["users"],
+                "summary": "Create a user",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userName": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU1ZGVhZjcxZjhjMDBlNjZlNWUyMDYiLCJpYXQiOjE3MDk2NjU3MjIsImV4cCI6MTcwOTY3MjkyMn0.JTjNO1wa0UjBmSDlcbQYM8R_4DG8BCQ9JpR9E-bATxM",
+                                    "message": "Signed in successfully!!",
+                                    "error": null
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/login": {
+            "post": {
+                "tags": ["user"],
+                "summary": "login user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "example": "divine"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "divine123@gmail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "diva12345"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "status": "success",
+                                    "data": []
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/blogs/{id}": {
+            "patch": {
+                "tags": ["blogs"],
+                "summary": "Update a blog",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of the blog",
+                        "schema": {
+                            "type": "string",
+                            "example": "63caaf3527b29e1d399896da"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary",
+                                        "description": "the image of the blog"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [],
+                                    "message": "Blog updated successfully!!",
+                                    "error": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["blogs"],
+                "summary": "Get a blog",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "message"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "message": "",
+                                    "error": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["blogs"],
+                "summary": "Delete a blog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of the blog",
+                        "schema": {
+                            "type": "string",
+                            "example": "63caaf3527b29e1d399896da"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "message"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [],
+                                    "message": "Blog deleted successfully!!",
+                                    "error": null
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/blogs/{id}/comments": {
+            "post": {
+                "tags": ["Comments"],
+                "summary": "Create a comment",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of the blog",
+                        "schema": {
+                            "type": "string",
+                            "example": "63caaf3527b29e1d399896da"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "commentedBy": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [],
+                                    "message": "Comment created successfully!!",
+                                    "error": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Comments"],
+                "summary": "List blog all comments",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [],
+                                    "message": "",
+                                    "error": null
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/blogs/{id}/comments/{id}": {
+            "patch": {
+                "tags": ["Comments"],
+                "summary": "Update a comment visible to the public",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of the blog",
+                        "schema": {
+                            "type": "string",
+                            "example": "63caaf3527b29e1d399896da"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "visible": {
+                                        "type": "boolean",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [],
+                                    "message": "Comment updated successfully!!",
+                                    "error": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Comments"],
+                "summary": "Get a comment",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "message"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": []
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/messages": {
+            "get": {
+                "tags": ["queries"],
+                "summary": "Get all queries",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [],
+                                    "message": "",
+                                    "error": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["queries"],
+                "summary": "Create a query",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [],
+                                    "message": "Query created successfully!!",
+                                    "error": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/messages/{id}": {
+            "patch": {
+                "tags": ["queries"],
+                "summary": "Update a query",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of the blog",
+                        "schema": {
+                            "type": "string",
+                            "example": "63caaf3527b29e1d399896da"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": []
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["queries"],
+                "summary": "Get a query",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object"
+                                        },
+                                        "message": {
+                                            "type": "message"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": []
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/blogs/{id}/likes": {
+            "post": {
+                "tags": ["Likes"],
+                "summary": "like or unlike a blog",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of the blog",
+                        "schema": {
+                            "type": "string",
+                            "example": "63caaf3527b29e1d399896da"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "number"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": 2,
+                                    "message": "Liked",
+                                    "error": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Likes"],
+                "summary": "List blog all likes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "number"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "error": {
+                                            "type": "error"
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": 3,
+                                    "message": "",
+                                    "error": null
                                 }
                             }
                         }

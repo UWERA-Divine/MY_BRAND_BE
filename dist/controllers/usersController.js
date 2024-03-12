@@ -80,14 +80,15 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                 const token = jsonwebtoken_1.default.sign({ userId: user._id }, jwtSecret, {
                     expiresIn: tokenExpire,
                 });
-                res.status(200).header("Authorization").send({
-                    message: "logged in successfully!!",
-                });
+                // res.status(200).header("Authorization").send({
+                //   message: "logged in successfully!!",
+                // });
+                return res.json({ token });
             }
         }
         else {
             return res.status(400).send({
-                data: [],
+                token: "token",
                 message: "User not found please register!!",
                 error: null,
             });
