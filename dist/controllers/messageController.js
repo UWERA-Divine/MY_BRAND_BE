@@ -17,6 +17,7 @@ const Message_1 = __importDefault(require("../models/Message"));
 const messageValidators_1 = require("../validators/messageValidators");
 const createMessage = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        // console.log(req.body);
         const { error, value } = messageValidators_1.messageSchema.validate(req.body);
         if (error) {
             res.status(400).json({ error: error.message });

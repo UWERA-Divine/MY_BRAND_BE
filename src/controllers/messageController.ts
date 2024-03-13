@@ -9,6 +9,7 @@ export const createMessage = async (
   res: Response
 ): Promise<void> => {
   try {
+    // console.log(req.body);
     const { error, value } = messageSchema.validate(req.body);
 
     if (error) {
