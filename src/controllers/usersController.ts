@@ -72,14 +72,15 @@ export const loginUser = async (req: Request, res: Response) => {
         });
       } else {
         const jwtSecret = (process.env.JWT_SECRET as string) || "secret";
-        const tokenExpire = process.env.TOKEN_EXPIRES || "2h";
+        const tokenExpire = process.env.TOKEN_EXPIRES || "5h";
         const token = jwt.sign({ userId: user._id }, jwtSecret, {
           expiresIn: tokenExpire,
         });
+        const status = true;
         // res.status(200).header("Authorization").send({
         //   message: "logged in successfully!!",
         // });
-        return res.json({token})
+        return res.status(200).json({token, status});
       }
     } else {
       return res.status(400).send({

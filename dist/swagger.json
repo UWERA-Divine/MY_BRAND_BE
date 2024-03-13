@@ -11,7 +11,7 @@
             "description": "development server"
         },
         {
-            "url": "http://localhost:3000",
+            "url": "https://my-brand-be-2-bj1r.onrender.com",
             "description": "production server"
         }
     ],
@@ -118,11 +118,6 @@
             "post": {
                 "tags": ["users"],
                 "summary": "Create a user",
-                "security": [
-                    {
-                        "token": []
-                    }
-                ],
                 "requestBody": {
                     "content": {
                         "application/json": {

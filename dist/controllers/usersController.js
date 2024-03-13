@@ -76,14 +76,15 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             }
             else {
                 const jwtSecret = process.env.JWT_SECRET || "secret";
-                const tokenExpire = process.env.TOKEN_EXPIRES || "2h";
+                const tokenExpire = process.env.TOKEN_EXPIRES || "5h";
                 const token = jsonwebtoken_1.default.sign({ userId: user._id }, jwtSecret, {
                     expiresIn: tokenExpire,
                 });
+                const status = true;
                 // res.status(200).header("Authorization").send({
                 //   message: "logged in successfully!!",
                 // });
-                return res.json({ token });
+                return res.status(200).json({ token, status });
             }
         }
         else {
