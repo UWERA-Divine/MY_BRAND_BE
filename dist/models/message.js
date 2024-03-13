@@ -26,9 +26,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // models/Message.ts
 const mongoose_1 = __importStar(require("mongoose"));
 const messageSchema = new mongoose_1.Schema({
-    content: { type: String, required: true },
-    sender: { type: String, required: true },
-    receiver: { type: String, required: true },
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    description: { type: String, required: true },
     createdAt: { type: Date, default: Date.now }
 });
 exports.default = mongoose_1.default.model('Message', messageSchema);

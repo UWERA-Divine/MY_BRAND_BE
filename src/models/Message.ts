@@ -2,16 +2,16 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IMessage extends Document {
-    content: string;
-    sender: string;
-    receiver: string;
+    name: string;
+    email: string;
+    description: string;
     createdAt: Date;
 }
 
 const messageSchema: Schema = new Schema({
-    content: { type: String, required: true },
-    sender: { type: String, required: true },
-    receiver: { type: String, required: true },
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    description: { type: String, required: true },
     createdAt: { type: Date, default: Date.now }
 });
 
