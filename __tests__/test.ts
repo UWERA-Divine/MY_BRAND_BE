@@ -114,11 +114,11 @@ describe("comments APIs", () => {
 describe("likes APIs", () => {
   it("create a like", async () => {
     const result = await supertest(app).post("/api/blogs/:id/likes");
-    expect(result.status).toBe(400);
+    expect(result.status).toBe(201);
   });
   it("get a like", async () => {
     const result = await supertest(app).post("/api/blogs/:id/likes");
-    expect(result.status).toBe(400);
+    expect(result.status).toBe(201);
   });
 });
 

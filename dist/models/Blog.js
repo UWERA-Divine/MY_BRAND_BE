@@ -15,6 +15,10 @@ const blogSchema = new mongoose_1.Schema({
     imageUrl: {
         type: String
     },
+    likes: {
+        type: Number,
+        default: 0
+    },
     createdAt: {
         type: Date,
         default: Date.now,

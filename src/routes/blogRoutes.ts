@@ -6,8 +6,8 @@ import upload from '../config/multer'
 
 const router = express.Router();
 router.post('/',isAuthenticated,upload.single('imageUrl'),blogController.createBlog);
-router.get('/',isAuthenticated,blogController.getBlogs);
-router.get('/:id',isAuthenticated,blogController.getBlogById);
+router.get('/',blogController.getBlogs);
+router.get('/:id',blogController.getBlogById);
 router.patch('/:id',isAuthenticated, blogController.updateBlog);
 router.delete('/:id',isAuthenticated, blogController.deleteBlog);
 

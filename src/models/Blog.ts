@@ -6,6 +6,7 @@ export interface  Iblog{
   title:string,
   content:string,
   imageUrl:string,
+  likes:number,
   createdAt:Date,
 }
 const blogSchema = new Schema<Iblog>({
@@ -20,6 +21,10 @@ const blogSchema = new Schema<Iblog>({
   },
   imageUrl: {
     type:String
+  },
+  likes: {
+    type: Number,
+    default: 0
   },
   createdAt: {
     type: Date,
