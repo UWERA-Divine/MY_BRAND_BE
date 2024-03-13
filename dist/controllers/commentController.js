@@ -47,7 +47,6 @@ const CreateComment = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         const { id: blogId } = req.params;
         const newComment = new Comment_1.default({
             name,
-            email,
             comment,
             blogId,
             date: new Date(),

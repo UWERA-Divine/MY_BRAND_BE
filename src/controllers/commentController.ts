@@ -7,7 +7,6 @@ import { commentSchema } from '../validators/commentValidators';
 interface IReqBodyComment extends Request {
   body: {
     name: string;
-    email: string;
     comment: string;
   };
   params: {
@@ -58,7 +57,6 @@ export const CreateComment = async (req: IReqBodyComment, res: Response) => {
     const { id: blogId } = req.params;
     const newComment = new Comment({
       name,
-      email,
       comment,
       blogId,
       date: new Date(),

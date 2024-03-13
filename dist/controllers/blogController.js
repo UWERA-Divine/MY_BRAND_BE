@@ -65,7 +65,8 @@ const createBlog = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             content,
             imageUrl: imageUrl.secure_url,
         });
-        res.status(201).json(blog);
+        res.status(201).send({ blog, message: "Blog created successfully!!" });
+        // res.status(201).json(blog);
     }
     catch (err) {
         res.status(400).json({ message: err.message });

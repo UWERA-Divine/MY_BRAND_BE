@@ -60,7 +60,8 @@ export const createBlog = async (req: Request, res: Response) => {
       imageUrl: imageUrl.secure_url,
     });
 
-    res.status(201).json(blog);
+    res.status(201).send({ blog, message: "Blog created successfully!!" }); 
+    // res.status(201).json(blog);
   } catch (err: any) {
     res.status(400).json({ message: err.message });
   }
